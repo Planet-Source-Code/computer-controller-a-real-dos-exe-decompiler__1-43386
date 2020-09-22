@@ -1,0 +1,80 @@
+Hello. This read me file contains information on how to make a dos test exe.
+Anybody who is good at asm and debug may try other things.
+OK. Here what you do:
+
+Goto Start > Run
+
+Type in "debug" and press enter
+
+A dos program apears.
+
+Type in "a" and press enter
+
+Some numbers apear. Ignore them for now.
+
+Type in the following things and press enter:
+
+mov cx, 0
+mov dh, 18
+mov dl, 4f
+mov bh, 70
+mov ax, 600
+int 10
+mov ax, 4c00
+int 21
+
+After all that is typed in, press enter two times.
+
+Type in "rcx" and press enter.
+
+It should show you something like this - CX 0000
+
+Type in "13" and press enter
+
+Type in "n clrscr.com" and press enter
+
+Type in "w" and press enter
+
+It should show you something like this - Writing 0013 bytes
+
+Type in "q" and press enter
+
+It should look like this:
+
+-a
+134B:0100 mov cx, 0
+134B:0103 mov dh, 18
+134B:0105 mov dl, 4f
+134B:0107 mov bh, 70
+134B:0109 mov ax, 600
+134B:010C int 10
+134B:010E mov ax, 4c00
+134B:0111 int 21
+134B:0113
+-rcx
+cx 0000
+:13
+-n clrscr.com
+-w
+Writing 0013 bytes
+-q
+
+After that is done you goto C drive (or what ever drive you have) and find a program called clrscr.com
+
+Change this file to clrscr.exe
+
+Now lets check if it works.
+
+Goto Start > Run
+
+Type in "command"
+
+A dos program apears.
+
+Tell it to run the program you created.
+
+If it changes the screen color, you did everything correct. If not, either there is something wrong with your monitor, or you did something wrong.
+
+Open my program and tell it to decompile "C:\clrscr"
+
+After its done open "C:\clrscr.asm" in notepad or edit. There it is! The decompiled code of the program you just compiled.
